@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1573016125 source:d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\src\fardo.cpp
+	"Fardo.h"
+	"Tiempo.h"
+	"Fecha.h"
+	<iostream>
+
+1573021617 d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\include\fardo.h
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1573024380 source:d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\src\partida.cpp
+	"Partida.h"
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1573021219 d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\include\partida.h
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1573024408 source:d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\src\pedido.cpp
+	"Pedido.h"
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1573023379 d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\include\pedido.h
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1572984580 source:d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\src\tiempo.cpp
+	"Tiempo.h"
+	<iostream>
+
+1573016067 d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\include\tiempo.h
+	<iostream>
+
+1573025520 source:d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\main.cpp
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+	"Fardo.h"
+	"Partida.h"
+	"Pedido.h"
+
+1572983238 d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\include\fecha.h
+	<iostream>
+
+1572982261 source:d:\ccomp\2019-02\ccomp\trabajofinal\basetextil\src\fecha.cpp
+	"Fecha.h"
+	<iostream>
+
