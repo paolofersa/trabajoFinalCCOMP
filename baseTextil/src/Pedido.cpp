@@ -1,108 +1,82 @@
 #include "Pedido.h"
 #include <iostream>
+#include <fstream>
 #include "Fecha.h"
 #include "Tiempo.h"
+#include "Registro.h"
 
 using namespace std;
-//cantidad de pedidos de forma global
+//CANTIDAD DE PEDIDOS DE FORMA GLOBAL
 unsigned int Pedido::cantidadPedidos = 0;
-unsigned int Pedido::getCantidadPedidos(){
-    return cantidadPedidos;
-}
+
 //constructor
 Pedido::Pedido(){
     cantidadPedidos++;
-    codigoPedido = cantidadPedidos;
+    int _codPedido, _codMaterial, _areaCliente, _h, _mi, _s, _d, _me, _a;
+    double _peso;
+    //LEER FICHERO
+    ifstream Leer;
+    Leer.open("pedidos.txt");
+    Leer >> _codPedido;
+    while(!Leer.eof()){
+        Leer>>_codMaterial>>_peso>>_areaCliente>>_h>>_mi>>_s>>_d>>_me>>_a;
+        Leer>>_codPedido;
+    }
+    codPedido = cantidadPedidos + _codPedido;
+    Leer.close();
 }
 Pedido::~Pedido(){cantidadPedidos--;}
-//definir valores de fecha y hora
-void Pedido::defFechaEmision(int d, int m, int a){
-    fEmision.defFecha(d,m,a);
-    fechaEmision[0]=fEmision.getDia();  //asignar dia de entrada
-    fechaEmision[1]=fEmision.getMes();  //asignar mes de entrada
-    fechaEmision[2]=fEmision.getAnio(); //asignar anio de entrada
-}
-void Pedido::defTiempoEmision(int h, int m, int s){
-    tEmision.defTiempo(h,m,s);
-    tiempoEmision[0]=tEmision.getHora();    //asignar hora de entrada
-    tiempoEmision[1]=tEmision.getMinuto();  //asignar minuto de entrada
-    tiempoEmision[2]=tEmision.getSegundo(); //asignar segundo de entrada
-}
-void Pedido::defFechaAtencion(int d, int m, int a){
-    fAtencion.defFecha(d,m,a);
-    fechaAtencion[0]=fAtencion.getDia();  //asignar dia de entrada
-    fechaAtencion[1]=fAtencion.getMes();  //asignar mes de entrada
-    fechaAtencion[2]=fAtencion.getAnio(); //asignar anio de entrada
-}
-void Pedido::defTiempoAtencion(int h, int m, int s){
-    tAtencion.defTiempo(h,m,s);
-    tiempoAtencion[0]=tAtencion.getHora();    //asignar hora de entrada
-    tiempoAtencion[1]=tAtencion.getMinuto();  //asignar minuto de entrada
-    tiempoAtencion[2]=tAtencion.getSegundo(); //asignar segundo de entrada
-}
-void Pedido::defOperario(string o){
-    operarioEncargado = o;
-}
-void Pedido::defDestino(string d){
-    areaDeDestino = d;
-}
-//obtener valores del pedido
-int Pedido::getCodigoPedido(){return codigoPedido;}
-string Pedido::getAreaDeDestino(){return areaDeDestino;}
-string Pedido::getOperarioEncargado(){return operarioEncargado;}
-unsigned int Pedido::getTiempoEmision(string parametro){
-    unsigned int i = 0; //variable para desplazarse por el arreglo de Tiempo
-    if (parametro == "HH")
-        i = 1;
-    else{
-        if (parametro == "MM")
-            i = 2;
+
+//DEFINIR VARIABLES
+void Pedido::defArea(int ac){areaCliente = ac;}
+
+//REGISTRAR DATOS EN .txt
+void Pedido::regDatos(){
+    //ACTUALIZAR partidas.txt
+    //DEFINIR VARIABLES TEMPORALES
+    int _codMaterial, _areaProv, _h, _mi, _s, _d, _me, _a;
+    string _articulo;
+    double _peso,nPeso;
+    bool encontrado = false;
+
+    //LEER FICEHRO
+    ofstream Temp;
+    ifstream Leer;
+    Leer.open("partidas.txt");
+    Temp.open("Temp.txt");
+    Leer >> _codMaterial;
+    while(!Leer.eof()){
+        Leer>>_articulo>>_peso>>_areaProv>>_h>>_mi>>_s>>_d>>_me>>_a;
+        if(_codMaterial == codMaterial){
+            encontrado = true;
+            nPeso = _peso - peso;       //ACTUALIZA EL PESO PARA EL STOCK
+            if(nPeso>0){
+                Temp <<_codMaterial<<" "<<_articulo<<" "<<nPeso<<" "<<_areaProv<<" "<<_h<<" "<<_mi<<" "<<_s<<" "<<_d<<" "<<_me<<" "<<_a<<endl;
+                cout << "Peso de partida actualizada correctamente" << endl;
+                cout << endl;
+                //REGISTRAR EN pedidos.txt
+                ofstream destino;
+                destino.open("pedidos.txt",ios::app);
+                destino<<codPedido<<" "<<codMaterial<<" "<<peso<<" "<<areaCliente<<" "<<fecha[0]<<" "<<fecha[1]<<" "<<fecha[2]<<" "<<tiempo[0]<<" "<<tiempo[1]<<" "<<tiempo[2]<<endl;
+                destino.close();
+            }
+            else{
+                Temp <<_codMaterial<<" "<<_articulo<<" "<<_peso<<" "<<_areaProv<<" "<<_h<<" "<<_mi<<" "<<_s<<" "<<_d<<" "<<_me<<" "<<_a<<endl;
+                cout << "Saldo insuficiente" << endl;
+                cout << endl;
+            }
+        }
         else{
-            if (parametro == "SS")
-                i = 3;
-        }//fin else MM
-    }//fin else HH
-    return *(tiempoEmision + i - 1);
-}
-unsigned int Pedido::getFechaEmision(string parametro){
-    unsigned int i = 0; //variable para desplazarse por el arreglo de Fecha
-    if (parametro == "DD")
-        i = 1;
-    else{
-        if (parametro == "MM")
-            i = 2;
-        else{
-            if (parametro == "AA")
-                i = 3;
-        }//fin else MM
-    }//fin else HH
-    return *(fechaEmision + i - 1);
-}
-unsigned int Pedido::getTiempoAtencion(string parametro){
-    unsigned int i = 0; //variable para desplazarse por el arreglo de Tiempo
-    if (parametro == "HH")
-        i = 1;
-    else{
-        if (parametro == "MM")
-            i = 2;
-        else{
-            if (parametro == "SS")
-                i = 3;
-        }//fin else MM
-    }//fin else HH
-    return *(tiempoAtencion + i - 1);
-}
-unsigned int Pedido::getFechaAtencion(string parametro){
-    unsigned int i = 0; //variable para desplazarse por el arreglo de Fecha
-    if (parametro == "DD")
-        i = 1;
-    else{
-        if (parametro == "MM")
-            i = 2;
-        else{
-            if (parametro == "AA")
-                i = 3;
-        }//fin else MM
-    }//fin else HH
-    return *(fechaAtencion + i - 1);
+            Temp <<_codMaterial<<" "<<_articulo<<" "<<_peso<<" "<<_areaProv<<" "<<_h<<" "<<_mi<<" "<<_s<<" "<<_d<<" "<<_me<<" "<<_a<<endl;
+        }
+        Leer>>_codMaterial;
+    }
+    if (encontrado = false){
+        cout << "No se encuentra partida" << endl;
+        cout << endl;
+    }
+    Leer.close();
+    Temp.close();
+    remove("partidas.txt");
+    rename("Temp.txt","partidas.txt");
 }

@@ -1,0 +1,4 @@
+4 Tintorería planta1 1
+5 Hilandería planta2 2
+6 Laboratorio planta3 3
+12 area2 planta6 1

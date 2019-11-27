@@ -1,38 +1,84 @@
 #include "Partida.h"
-#include <iostream>
 #include "Fecha.h"
 #include "Tiempo.h"
+#include <iostream>
 
 using namespace std;
 
-Partida::Partida(string _codigo){
-    codigoPartida = _codigo;
+Partida::Partida(){
+
 }
 
 Partida::~Partida(){
     //dtor
 }
 
-//definir variables
-void Partida::defArticulo(string art){
-    articulo = art;
+//DEFINIR VALORES DE VARIABLES
+void Partida::defCodigo(int c)
+{
+    codPartida = c;
 }
-void Partida::defUbicacion(string ubi){
-    ubicacion = ubi;
+void Partida::defArt(string ar)
+{
+    articulo = ar;
 }
-void Partida::defPeso(double p){
-
+void Partida::defPeso(double p)
+{
+    peso = p;
 }
-/*void Partida::defTiempoEntrada(int h, int m, int s){
-    tEntrada.defTiempo(h,m,s);
-    tiempoEntrada[0]=tEntrada.getHora();    //asignar hora de entrada
-    tiempoEntrada[1]=tEntrada.getMinuto();  //asignar minuto de entrada
-    tiempoEntrada[2]=tEntrada.getSegundo(); //asignar segundo de entrada
+void Partida::defAreaProc(int ap)
+{
+    areaProc = ap;
 }
-void Partida::defFechaEntrada(int d, int m, int a){
-    fEntrada.defFecha(d,m,a);
-    fechaEntrada[0]=fEntrada.getDia();  //asignar dia de entrada
-    fechaEntrada[1]=fEntrada.getMes();  //asignar mes de entrada
-    fechaEntrada[2]=fEntrada.getAnio(); //asignar anio de entrada
+void Partida::defFechaIngreso(int d,int me,int a)
+{
+    fechaIngreso[0] = d;
+    fechaIngreso[1] = me;
+    fechaIngreso[2] = a;
 }
-*/
+void Partida::defTiempoIngreso(int h,int mi, int s)
+{
+    tiempoIngreso[0] = h;
+    tiempoIngreso[1] = mi;
+    tiempoIngreso[2] = s;
+}
+int Partida::getCodigo()
+{
+    return codPartida;
+}
+string Partida::getArticulo()
+{
+    return articulo;
+}
+double Partida::getPeso()
+{
+    return peso;
+}
+int Partida::getAreaProc()
+{
+    return areaProc;
+}
+int Partida::getHora()
+{
+    return tiempoIngreso[0];
+}
+int Partida::getMinuto()
+{
+    return tiempoIngreso[1];
+}
+int Partida::getSegundo()
+{
+    return tiempoIngreso[2];
+}
+int Partida::getDia()
+{
+    return fechaIngreso[0];
+}
+int Partida::getMes()
+{
+    return fechaIngreso[1];
+}
+int Partida::getAnio()
+{
+    return fechaIngreso[2];
+}

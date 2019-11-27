@@ -54,3 +54,133 @@
 	"Fecha.h"
 	<iostream>
 
+1574835401 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	"Fecha.h"
+	"Tiempo.h"
+	"Partida.h"
+	"Pedido.h"
+	"Ingreso.h"
+	"Stock.h"
+
+1572983238 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\fecha.h
+	<iostream>
+
+1573016067 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\tiempo.h
+	<iostream>
+
+1573021617 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\fardo.h
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1574749598 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\partida.h
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+
+1574835401 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\pedido.h
+	<iostream>
+	"Fecha.h"
+	"Tiempo.h"
+	"Registro.h"
+
+1573016125 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\fardo.cpp
+	"Fardo.h"
+	"Tiempo.h"
+	"Fecha.h"
+	<iostream>
+
+1574709268 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\fecha.cpp
+	"Fecha.h"
+	<iostream>
+
+1574749715 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\partida.cpp
+	"Partida.h"
+	"Fecha.h"
+	"Tiempo.h"
+	<iostream>
+
+1574835401 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\pedido.cpp
+	"Pedido.h"
+	<iostream>
+	<fstream>
+	"Fecha.h"
+	"Tiempo.h"
+	"Registro.h"
+
+1574709268 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\tiempo.cpp
+	"Tiempo.h"
+	<iostream>
+
+1574840217 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\areacliente.cpp
+	"AreaCliente.h"
+	"AreaDeProduccion.h"
+	<fstream>
+	<iostream>
+
+1574839893 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\areacliente.h
+	"AreaDeProduccion.h"
+	<iostream>
+
+1574839562 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\areadeproduccion.cpp
+	"AreaDeProduccion.h"
+	<iostream>
+
+1574838655 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\areadeproduccion.h
+	<iostream>
+
+1574840120 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\areaproveedora.cpp
+	"AreaProveedora.h"
+	"AreaDeProduccion.h"
+	<iostream>
+
+1574840245 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\areaproveedora.h
+	"AreaDeProduccion.h"
+	<fstream>
+	<iostream>
+
+1574826937 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\ingreso.cpp
+	"Ingreso.h"
+	"Fecha.h"
+	"Tiempo.h"
+	"Registro.h"
+	<fstream>
+	<iostream>
+
+1574826353 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\ingreso.h
+	"Fecha.h"
+	"Tiempo.h"
+	"Registro.h"
+	<iostream>
+
+1574691884 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\item.cpp
+	"Item.h"
+
+1574691884 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\item.h
+
+1574835625 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\stock.cpp
+	"Stock.h"
+	"Partida.h"
+	<fstream>
+	<iostream>
+	<iomanip>
+
+1574835469 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\stock.h
+	"Partida.h"
+	<fstream>
+	<iostream>
+
+1574826467 d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\include\registro.h
+	"Fecha.h"
+	"Tiempo.h"
+	<iostream>
+
+1574826092 source:d:\ccomp\2019-02\ccomp\laboratorio\repositorios\trabajofinalccomp\basetextil\src\registro.cpp
+	"Registro.h"
+	"Fecha.h"
+	"Tiempo.h"
+	<iostream>
+

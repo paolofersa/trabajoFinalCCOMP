@@ -9,32 +9,36 @@ using namespace std;
 class Partida
 {
     public:
-        Partida(string);
+        Partida();
         ~Partida();
-        //objetos de tiempo y fecha
-        Tiempo tEntrada;
-        Fecha fEntrada;
+
         //definicion de variables
-        void defArticulo(string);
-        void defUbicacion(string);
+        void defCodigo(int);
+        void defArt(string);
         void defPeso(double);
-        void defFechaEntrada(int,int,int);
-        void defTiempoEntrada(int,int,int);
+        void defAreaProc(int);
+        void defTiempoIngreso(int,int,int);
+        void defFechaIngreso(int,int,int);
+
         //obtencion de variables
+        int getCodigo();
         string getArticulo();
-        string getUbicacion();
         double getPeso();
-        unsigned int getFechaEntrada(string);
-        unsigned int getTiempoEntrada(string);
+        int getAreaProc();
+        int getHora();
+        int getMinuto();
+        int getSegundo();
+        int getDia();
+        int getMes();
+        int getAnio();
 
     private:
-        string codigoPartida;
+        int codPartida;
         string articulo;
-        string ubicacion;
-        string estadoEnProceso;
         double peso;
-        unsigned int fechaEntrada[3];
-        unsigned int tiempoEntrada[3];
+        int areaProc;
+        unsigned int fechaIngreso[3];
+        unsigned int tiempoIngreso[3];
 
 };
 

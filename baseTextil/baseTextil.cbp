@@ -34,16 +34,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Fardo.h" />
+		<Unit filename="include/AreaCliente.h" />
+		<Unit filename="include/AreaDeProduccion.h" />
+		<Unit filename="include/AreaProveedora.h" />
 		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Ingreso.h" />
 		<Unit filename="include/Partida.h" />
 		<Unit filename="include/Pedido.h" />
+		<Unit filename="include/Registro.h" />
+		<Unit filename="include/Stock.h" />
 		<Unit filename="include/Tiempo.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Fardo.cpp" />
+		<Unit filename="src/AreaCliente.cpp" />
+		<Unit filename="src/AreaDeProduccion.cpp" />
+		<Unit filename="src/AreaProveedora.cpp" />
 		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Ingreso.cpp" />
 		<Unit filename="src/Partida.cpp" />
 		<Unit filename="src/Pedido.cpp" />
+		<Unit filename="src/Registro.cpp" />
+		<Unit filename="src/Stock.cpp" />
 		<Unit filename="src/Tiempo.cpp" />
 		<Extensions>
 			<code_completion />

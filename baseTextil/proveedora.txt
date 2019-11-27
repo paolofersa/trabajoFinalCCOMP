@@ -1,0 +1,4 @@
+1 Peinado planta4 Manuel
+2 Lavado planta4 Gerardo
+3 Cardas planta4 Luis
+10 area1 planta5 Pedro
